@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">L09-T03</string>
+    <string-array name="maat">
+        <item>Molemmat</item>
+        <item>Viro</item>
+        <item>Suomi</item>
+    </string-array>
+</resources>

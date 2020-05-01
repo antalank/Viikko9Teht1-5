@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/otsikko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Tällä applikaatiolla voit hakea SmartPosteja"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/otsikkoPaiva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/otsikkoPaiva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="26dp"
+        android:text="Valitse päivät"
+        app:layout_constraintBottom_toTopOf="@+id/paivaLoppu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otsikko" />
+
+    <EditText
+        android:id="@+id/paivaAlku"
+        android:layout_width="159dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/otsikkoAika"
+        app:layout_constraintEnd_toStartOf="@+id/paivaLoppu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoPaiva" />
+
+    <EditText
+        android:id="@+id/paivaLoppu"
+        android:layout_width="159dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/otsikkoAika"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/paivaAlku"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoPaiva" />
+
+    <TextView
+        android:id="@+id/otsikkoAika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="151dp"
+        android:text="Valitse kellonajat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paivaAlku" />
+
+    <EditText
+        android:id="@+id/aikaAlku"
+        android:layout_width="157dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="11dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/otsikkoMaa"
+        app:layout_constraintEnd_toStartOf="@+id/aikaLoppu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoAika" />
+
+    <EditText
+        android:id="@+id/aikaLoppu"
+        android:layout_width="161dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/otsikkoMaa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/aikaAlku"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoAika" />
+
+    <TextView
+        android:id="@+id/otsikkoMaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="16dp"
+        android:text="Valitse maa"
+        app:layout_constraintBottom_toTopOf="@+id/valitseMaa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aikaLoppu" />
+
+    <Spinner
+        android:id="@+id/valitseMaa"
+        android:layout_width="344dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/suodata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoMaa" />
+
+    <Button
+        android:id="@+id/suodata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="lisaaListaan"
+        android:text="Suodata"
+        app:layout_constraintBottom_toTopOf="@+id/otsikkoSmartPost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valitseMaa" />
+
+    <TextView
+        android:id="@+id/otsikkoSmartPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="23dp"
+        android:text="Valitse SmartPost"
+        app:layout_constraintBottom_toTopOf="@+id/valitseSmartPost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suodata" />
+
+    <Spinner
+        android:id="@+id/valitseSmartPost"
+        android:layout_width="340dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tiedot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoSmartPost" />
+
+    <Button
+        android:id="@+id/tiedot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="lueListasta"
+        android:text="Näytä tiedot"
+        app:layout_constraintBottom_toTopOf="@+id/sijainti"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valitseSmartPost" />
+
+    <TextView
+        android:id="@+id/sijainti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="16dp"
+        android:text="Sijainti näkyy tässä"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/aukioloaika"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiedot" />
+
+    <TextView
+        android:id="@+id/aukioloaika"
+        android:layout_width="402dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="16dp"
+        android:text="Aukioloajat näkyvät tässä"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/paivat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sijainti" />
+
+    <TextView
+        android:id="@+id/paivat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="51dp"
+        android:text="Aukiolopäivät näkyvät tässä"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aukioloaika" />
+
+    <TextView
+        android:id="@+id/nouto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="28dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/paivaLoppu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/otsikkoPaiva"
+        app:layout_constraintTop_toBottomOf="@+id/otsikko" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
